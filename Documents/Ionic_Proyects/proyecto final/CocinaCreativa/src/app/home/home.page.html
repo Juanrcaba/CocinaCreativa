@@ -1,0 +1,59 @@
+
+
+<ion-content [fullscreen]="true">
+ <div class="contenedor">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3" push="9">
+          <img src="../../assets/icon-only.png" alt="">
+      </ion-col>
+      <ion-col size="9" pull="3">
+        <div class="header">
+          <p><Strong>Hola, </Strong></p>
+          <span>descubre todo lo que puedes cocinar...</span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="contenedor-swiper">
+    <h2>Categorias</h2>
+    <swiper-container  spaceBetween = "10" loop = {true} slides-Per-View="3" speed="200" effect="slide">      
+      <swiper-slide *ngFor="let categoria of categorias" (click)=filtroCategoria(categoria)>{{categoria}}</swiper-slide>     
+    </swiper-container>
+  </div>
+
+  <div class="cards-container">
+
+    <ng-container *ngIf="!(isload | async)">
+      <ion-card *ngFor="let dato of datos">
+         <ion-skeleton-text [animated]="true" style="width: 160px; height: 105px;"></ion-skeleton-text>    
+        <ion-card-content>          
+          <p style="color:black">
+            <ion-skeleton-text [animated]="true" style="width: 50%"></ion-skeleton-text>
+          </p>
+          <span>            
+            <ion-skeleton-text [animated]="true" style="width: 50%"></ion-skeleton-text>
+          </span>
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+
+    <ng-container *ngIf="isload | async" >
+      <ion-card *ngFor="let receta of recetas" (click)=detalleReceta(receta.id)>
+        <img style=" height: 105px; width: 100%;" src="{{receta.url_img}}" alt="" srcset="">
+        <ion-card-content>
+          <p style="color:black">{{receta.categoria}}</p>
+          <span>{{receta.Nombre}}</span>
+          
+        </ion-card-content>
+      </ion-card>
+    </ng-container>
+  </div>
+ </div>
+
+ 
+</ion-content>
+
+
+

@@ -1,0 +1,101 @@
+ion-header{
+    ion-buttons{
+        height: 80px;
+       display: flex;
+       justify-content: space-between;
+    }
+
+}
+ion-content {
+  
+
+    .contenedor{
+        margin: 0;
+        padding:0;
+        background-color: white;       
+        width: 100%;
+        min-height: 100%;
+        position: relative;
+        bottom: 0;
+        overflow: hidden;
+        overflow-y: scroll;
+
+        .cabecera{
+            margin:0px;
+            padding:0;
+            //background-color: rgb(5, 118, 5);
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-direction: row-reverse;
+
+        }
+
+        .contenido{
+            position: absolute;
+            margin: 200px 0px 0px 0px; 
+                     
+            //background-color: rgb(171, 155, 240);
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 75px;
+            border-top-right-radius: 75px;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            .imagen{
+               position: absolute;
+                top: -50px;
+                width: 100%;
+                height: 200px;                
+                display: flex;                
+                justify-content: center;
+                align-items: center;
+                color: white;
+
+                .titulo{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: rgba(112, 99, 80, 0.6) ;
+                    z-index: 999;
+                    width: 90%;
+                    height: 100px; 
+                    align-self: flex-end;
+                    font-size: 16px;
+                    position: absolute;
+                }
+                img{
+                    width: 70%;
+                    height: 100%; 
+                    border-radius: 16px;                  
+                    //position: absolute;
+                    //top: -70px;                  
+                }
+               
+
+            }
+            .detalle{
+              position: relative;
+              top: 150px;
+                bottom: 0;
+
+                
+                .ingredientes,
+                .preparacion{               
+                    margin-left: 10px;
+                    margin-right: 10px;
+                   
+                    h3{
+                        font-weight: bold;
+                    }                    
+                }
+
+            }
+            
+
+        }
+    }
+}

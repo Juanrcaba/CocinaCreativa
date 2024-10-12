@@ -1,0 +1,74 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/"></ion-back-button>
+      <img src="../../../assets/icon-only.png" style="width: 100px;" alt="">
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="contenedor">
+
+    <ng-container *ngIf="!(isload | async)">
+    <div class="imagen">
+      <div class="titulo">
+        <ion-skeleton-text [animated]="true" style="width: 50%"></ion-skeleton-text>
+      </div>
+      <ion-skeleton-text [animated]="true" style="width: 160px; height: 105px;"></ion-skeleton-text>  
+      
+    </div>
+    <div class="detalle">
+      <div class="ingredientes">
+        <h3>Ingredientes</h3>
+        <ul >
+          <li *ngFor="let ingrediente of ingredientes">
+            <ion-skeleton-text [animated]="true" style="width: 50%"></ion-skeleton-text>
+          </li>
+        </ul>
+      </div>
+      <div class="preparacion">
+        <h3>Preparación</h3>
+        <ol>
+          <li *ngFor="let preparacion of preparacion">
+            <ion-skeleton-text [animated]="true" style="width: 50%"></ion-skeleton-text>
+          </li>
+        </ol> 
+        
+      </div>
+
+    </div>
+</ng-container>
+<ng-container *ngIf="(isload | async)">
+    <div class="contenido">
+      <div class="imagen">
+        <div class="titulo">
+          <ion-label>{{recetas[0]?.Nombre}}</ion-label>
+        </div>
+        <img [src]=recetas[0]?.url_img alt="" srcset="">
+        
+      </div>
+      <div class="detalle">
+        <div class="ingredientes">
+          <h3>Ingredientes</h3>
+          <ul >
+            <li *ngFor="let ingrediente of recetas[0]?.ingredientes">{{ingrediente.ingredientes}}</li>
+          </ul>
+        </div>
+        <div class="preparacion">
+          <h3>Preparación</h3>
+          <ol>
+            <li *ngFor="let preparacion of recetas[0]?.preparacions">{{preparacion.descripcion}}</li>
+          </ol> 
+          
+        </div>
+
+      </div>
+    </div>
+  </ng-container>
+  </div>
+</ion-content>
+
+
+

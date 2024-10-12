@@ -1,0 +1,7 @@
+{
+  "name": "CocinaCreativa",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

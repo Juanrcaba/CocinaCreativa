@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">CocinaCreativa</string>
+    <string name="title_activity_main">CocinaCreativa</string>
+    <string name="package_name">com.CocinaCreativa.njDev</string>
+    <string name="custom_url_scheme">com.CocinaCreativa.njDev</string>
+</resources>
